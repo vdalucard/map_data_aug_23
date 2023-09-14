@@ -1,0 +1,20 @@
+.custom-tooltip {
+    background: center;
+    padding: 0;
+    box-shadow: none;
+    border: 0;
+    font-weight: 800;
+}
+
+.custom-tooltip-class {
+    background: center;
+    padding: 0;
+    box-shadow: none;
+    border: 0;
+}
+
+/* 
+.state_name {
+    font-size: 0.8rem;
+    font-weight: 800;
+} */
