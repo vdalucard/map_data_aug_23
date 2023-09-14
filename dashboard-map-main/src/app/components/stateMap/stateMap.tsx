@@ -105,14 +105,14 @@ const StateMap: React.FC<StateMapProps> = ({ data, sendDataToParent, Unit, Color
             const shortfallinpercentValueTitle = shortfallinpercentValue >= 0 ? 'Target Surplus % ' : 'Target Deficit % ';
             layer.bindPopup(`
         <b>${feature.properties.shapeName}</b><br>
-        Growth: ${feature.properties.growth} % </br>
+        Error: ${feature.properties.growth} % </br>
          ${feature.properties.Target_mt ? "Target (Aug): " + feature.properties.Target_mt + " " + Unit + "</br>" : ""}
        ${feature.properties.Target_mt ? "Predictions (Aug): " + feature.properties.Predictions_mt + " " + Unit + "</br>" : ""}
        ${feature.properties.Confidence ? "Confidence (Aug): " + feature.properties.Confidence + "</br>" : ""}
        ${feature.properties.BillQuantityJuly ? "Bill Quantity July: " + feature.properties.BillQuantityJuly + " " + Unit + "</br >" : ""}
        ${feature.properties.shortfallinpercent ? shortfallinpercentValueTitle + " : " + sign + Math.abs(feature.properties.shortfallinpercent) + " % </br>" : ""}
-        Q1'23 : ${parseFloat(feature.properties.Q1_23!.toString()).toFixed(2)} ${Unit} </br>
-        Q1'24 : ${parseFloat(feature.properties.Q1_24!.toString()).toFixed(2)} ${Unit} </br>
+        Actual : ${parseFloat(feature.properties.Q1_23!.toString()).toFixed(2)} ${Unit} </br>
+        Target : ${parseFloat(feature.properties.Q1_24!.toString()).toFixed(2)} ${Unit} </br>
         `, {
                 direction: "right",
                 className: "dis-custom-tooltip",

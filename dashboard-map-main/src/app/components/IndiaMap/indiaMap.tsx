@@ -44,7 +44,7 @@ const IndiaMap: React.FC = () => {
         state_name: "",
     })
 
-    fetch(`${'https://raw.githubusercontent.com/vdalucard/map_data_aug_23/main/india_aug_map_v1.geojson'}`)
+    fetch(`${'https://raw.githubusercontent.com/vdalucard/map_data_aug_23/main/india_aug_map_v2.geojson'}`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -69,7 +69,7 @@ const IndiaMap: React.FC = () => {
             state_name: data.state_name
         }));
 
-        if (data.district == "0") {
+        if (data.district == null) {
             setShapeData(objectdata => ({
                 ...objectdata,
                 Q1_23: "No Data Available",
@@ -91,7 +91,7 @@ const IndiaMap: React.FC = () => {
             Q1_24: layer.feature.properties.Q1_24 + " KMT",
             state_name: layer.feature.properties.shapeName
         }))
-        if (layer.feature.properties.district == "0") {
+        if (layer.feature.properties.district == 0 ) {
             setShapeData(objectdata => ({
                 ...objectdata,
                 Q1_23: "No Data Available",
@@ -122,7 +122,7 @@ const IndiaMap: React.FC = () => {
         setShowStateMap(false)
         setstateName(layer.feature.properties.shapeName)
         const stateName = layer.feature.properties.shapeName.replace(/\s/g, '');
-        fetch(`${'https://raw.githubusercontent.com/vdalucard/map_data_aug_23/main/states_aug_v1/' + stateName + '.geojson'}`)
+        fetch(`${'https://raw.githubusercontent.com/vdalucard/map_data_aug_23/main/states_aug_v2/' + stateName + '.geojson'}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -221,7 +221,7 @@ const IndiaMap: React.FC = () => {
                     <TileLayer
                         url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png"
                     />
-                    <Legend LegendName={"YOY Growth %"} />
+                    <Legend LegendName={"Error %"} />
                     <InfoBox shapeName={shapeData.shapeName} growth={shapeData.growth} state_name={stateName} Q1_23={shapeData.Q1_23} Q1_24={shapeData.Q1_24} />
                     {
                         markers.map((marker: markersType) => (

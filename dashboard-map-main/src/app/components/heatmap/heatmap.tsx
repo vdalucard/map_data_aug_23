@@ -61,7 +61,7 @@ const HeatMap: React.FC = () => {
         .catch((error) => {
             console.error('Error fetching data:', error);
         });
-
+        
     const handleDataReceived = (data: InfoBoxType) => {
         setShapeData(prevState => ({
             ...prevState,
@@ -76,7 +76,7 @@ const HeatMap: React.FC = () => {
             Predictions_mt: data.Predictions_mt + " KMT",
             shortfallinpercent: data.shortfallinpercent
         }));
-
+        
         if (data.district == "0") {
             setShapeData(objectdata => ({
                 ...objectdata,

@@ -29,16 +29,16 @@ export default function Home() {
                                 } font-semibold border-transparent hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800`}
                             onClick={() => handleButtonClick('heatmap1')}
                         >
-                            Heatmap (Growth Q1&apos;23 v/s Q1&apos;24)
+                            Heatmap - Aug&apos;23 (Actual  v/s Target)
                         </button>
-                        <button
+                        {/* <button
                             type="button"
                             className={`w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border ${activeBtn === 'heatmap2' ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 shadow-sm'
                                 } font-semibold border-transparent hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800`}
                             onClick={() => handleButtonClick('heatmap2')}
                         >
                             Heatmap (Aug Target v/s Prediction)
-                        </button>
+                        </button> */}
                     </div>
                     {activeBtn === 'heatmap1' && <IndiaMap />}
                     {activeBtn === 'heatmap2' && <HeatMap />}

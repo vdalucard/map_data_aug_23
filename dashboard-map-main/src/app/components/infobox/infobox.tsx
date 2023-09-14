@@ -33,14 +33,14 @@ const InfoBox: React.FC<InfoBoxType> = (props) => {
             <div className="leaflet-control bg-white p-3">
                 <h1 className="font-semibold text-black text-lg">{props.state_name ? "State Name: " : ""} {props.state_name}</h1>
                 <h1 className="font-semibold text-black text-lg">District Name:  {props.shapeName ? props.shapeName : ""}</h1>
-                <h2 className="font-[600] text-black text-sm">Growth :{props.growth ? growthSign + Math.abs(props.growth) + " %" : "No Data Available"}</h2>
+                <h2 className="font-[600] text-black text-sm">Error :{props.growth ? growthSign + Math.abs(props.growth) + " %" : "No Data Available"}</h2>
                 <h1 className="font-[600] text-black text-sm">{props.Target_mt ? "Target (Aug): " : ""} {props.Target_mt ? props.Target_mt : ""} </h1>
                 <h1 className="font-[600] text-black text-sm">{props.Predictions_mt ? "Prediction (Aug): " : ""} {props.Predictions_mt ? props.Predictions_mt : ""} </h1>
                 <h1 className="font-[600] text-black text-sm">{props.Confidence ? "Confidence (Aug): " : ""} {props.Confidence ? props.Confidence : ""} </h1>
                 <h1 className="font-[600] text-black text-sm">{props.BillQuantityJuly ? "Bill Quantity (July): " : ""} {props.BillQuantityJuly ? props.BillQuantityJuly : ""} </h1>
                 <h1 className="font-[600] text-black text-sm">{props.shortfallinpercent ? shortfallinpercentValueTitle + ": " : ""} {props.shortfallinpercent ? sign + Math.abs(shortfallinpercentValue) + " %" : ""} </h1>
-                <h2 className="font-[600] text-black text-sm">Q1&apos;23 : {props.Q1_23}</h2>
-                <h2 className="font-[600] text-black text-sm">Q1&apos;24 : {props.Q1_24}</h2>
+                <h2 className="font-[600] text-black text-sm">Target : {props.Q1_23}</h2>
+                <h2 className="font-[600] text-black text-sm">Actual : {props.Q1_24}</h2>
             </div>
         </div>
     );
